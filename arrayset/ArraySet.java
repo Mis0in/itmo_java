@@ -12,8 +12,6 @@ public class ArraySet<T> extends AbstractSet<T> implements SortedSet<T> {
     }
 
     public ArraySet(Collection<? extends T> collection, Comparator<? super T> comparator) {
-        // :NOTE:
-        // new TreeSet<>();
 
         this.comparator = comparator;
         Set<T> set = new TreeSet<>(comparator);
@@ -21,7 +19,6 @@ public class ArraySet<T> extends AbstractSet<T> implements SortedSet<T> {
         array = List.copyOf(set);
     }
 
-    // :NOTE: ArraySet(Comparator)
     public ArraySet(Comparator<? super T> comparator) {
         this(Collections.emptyList(), comparator);
     }
